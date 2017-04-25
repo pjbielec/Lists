@@ -9,3 +9,4 @@ private static void testSpeedOne(String listType, List<Integer> list) {
 		long stop = System.currentTimeMillis();
 
 		System.out.println("Adding 1 000 000 elements to end of " + listType + " took " + (stop - start) + " ms");
+}
