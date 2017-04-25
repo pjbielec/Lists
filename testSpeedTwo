@@ -1,0 +1,13 @@
+private static void testSpeedTwo(String listType, List<Integer> list) {
+
+		long start = System.currentTimeMillis();
+
+		for (int i = 0; i < 100000; i++) {
+			list.add(0, i);
+		}
+
+		long stop = System.currentTimeMillis();
+
+		System.out.println("Adding 100 000 elements to beginning of " + listType + " took " + (stop - start) + " ms");
+
+	}
