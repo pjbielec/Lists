@@ -1,0 +1,66 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class ArrayListTest {
+
+	public static void main(String[] args) {
+
+		List<Integer> testedArrayList = new ArrayList<>();
+
+		// Adding
+
+		testedArrayList.add(5);
+		testedArrayList.add(15);
+		testedArrayList.add(25);
+		testedArrayList.add(9);
+		testedArrayList.add(17);
+
+		// Retrieving
+
+		System.out.println(testedArrayList.get(3));
+
+		System.out.println();
+
+		// Iterating
+
+		for (Integer value : testedArrayList) {
+			System.out.println(value);
+		}
+
+		// Removing
+
+		testedArrayList.remove(2);
+		System.out.println();
+		testSpeedTwo("ArrayList", testedArrayList);
+
+	}
+
+	private static void testSpeedOne(String listType, List<Integer> list) {
+
+		long start = System.currentTimeMillis();
+
+		for (int i = 0; i < 1000000; i++) {
+			list.add(i);
+		}
+
+		long stop = System.currentTimeMillis();
+
+		System.out.println("Adding 1 000 000 elements to end of " + listType + " took " + (stop - start) + " ms");
+
+	}
+	
+	private static void testSpeedTwo(String listType, List<Integer> list) {
+
+		long start = System.currentTimeMillis();
+
+		for (int i = 0; i < 100000; i++) {
+			list.add(0, i);
+		}
+
+		long stop = System.currentTimeMillis();
+
+		System.out.println("Adding 100 000 elements to beginning of " + listType + " took " + (stop - start) + " ms");
+
+	}
+
+}
